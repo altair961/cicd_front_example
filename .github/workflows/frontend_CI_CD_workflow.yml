@@ -18,7 +18,7 @@ jobs:
     #if: github.ref != 'refs/heads/master'
     steps:
       - name: say hello
-        run: echo github.ref
+        run: ${{ echo github.ref }}
 
   # This is a job called "deploy" 
   build_deploy:
