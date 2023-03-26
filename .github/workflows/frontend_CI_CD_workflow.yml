@@ -22,7 +22,6 @@ jobs:
 
   # This is a job called "build_deploy" 
   build_deploy:
-    needs: build
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/master'}} 
     steps:
