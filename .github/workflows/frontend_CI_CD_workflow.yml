@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: show branch name that initiated the workflow
-        run: echo "branch name: " ${{ github.ref }} 
+        run: echo 'branch name' ${{ github.ref }} 
 
   # This is a job called "deploy" 
   deploy:
