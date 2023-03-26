@@ -20,7 +20,7 @@ jobs:
       - name: say hello
         run: echo ${{ github.ref }} 
 
-  # This is a job called "deploy" 
+  # This is a job called "build_deploy" 
   build_deploy:
     needs: build
     runs-on: ubuntu-latest
