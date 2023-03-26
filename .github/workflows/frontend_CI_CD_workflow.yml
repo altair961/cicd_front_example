@@ -19,9 +19,10 @@ jobs:
     steps:
       - name: say hello
         run: echo ${{ github.ref }} 
-        
+
   # This is a job called "deploy" 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/master'}} 
     steps:
