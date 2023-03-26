@@ -14,8 +14,7 @@ jobs:
   # This is a job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    #if: ${{ github.ref == 'refs/heads/master'}} 
+    runs-on: ubuntu-latest 
     steps:
       - name: say hello
         run: echo ${{ github.ref }} 
