@@ -27,4 +27,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: say hello
-        run: echo "hello from build"
+        run: echo "hello from deploy"
