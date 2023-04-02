@@ -27,7 +27,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/master'}} // if the branch that we commit to is master then we run "deploy"
+    if: ${{ github.ref == 'refs/heads/master'}} # if the branch that we commit to is master then we run "deploy"
     steps:
       - name: say hello
         run: echo "hello from build_deploy"
