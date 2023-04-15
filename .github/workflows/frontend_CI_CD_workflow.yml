@@ -3,8 +3,9 @@ name: Frontend CI CD workflow
 # Controls when the workflow will run
 on:
   push:
-    branches: [ "master" ] # Triggers the workflow on push events but only for the "master" branch
+    branches: [ "main" ] # Triggers the workflow on push events but only for the "master" branch
   pull_request: # Triggers the workflow on pull request events for any branch
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,7 +23,25 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: get sources
         uses: actions/checkout@v3
+        
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
 
+      - name: install node modules
+        working-directory: .      
+        run: npm install
+
+      - name: compile
+        working-directory: .        
+        run: npm run build
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifact
+          path: dist
+          
   # This is a job called "deploy" 
   deploy:
     needs: build
